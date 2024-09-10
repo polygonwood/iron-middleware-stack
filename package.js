@@ -5,8 +5,8 @@ Package.describe({
   git: 'https://github.com/iron-meteor/iron-middleware-stack'
 });
 
-Package.on_use(function (api) {
-  api.versionsFrom('METEOR@0.9.2');
+Package.onUse(function (api) {
+  api.versionsFrom('3.0.2');
 
   api.use('underscore');
   api.use('ejson');
@@ -16,15 +16,15 @@ Package.on_use(function (api) {
 
   api.use('iron:url@1.0.11');
 
-  api.add_files('lib/handler.js');
-  api.add_files('lib/middleware_stack.js');
+  api.addFiles('lib/handler.js');
+  api.addFiles('lib/middleware_stack.js');
   api.export('Handler', {testOnly: true});
 });
 
-Package.on_test(function (api) {
+Package.onTest(function (api) {
   api.use('iron:middleware-stack');
   api.use('tinytest');
   api.use('test-helpers');
-  api.add_files('test/handler_test.js');
-  api.add_files('test/middleware_stack_test.js');
+  api.addFiles('test/handler_test.js');
+  api.addFiles('test/middleware_stack_test.js');
 });
